@@ -2,10 +2,10 @@ const User = require("../../models/User.model")
 
 const getAllUsers = async(req, res, next) => {
     try {
-        const id = req.params
-        console.log("values ye hain", id);
+        const { Id } = req.params
+        console.log("values ye hain", Id);
 
-        const users = await User.deleteOne({"id": id});
+        const users = await User.deleteOne({"_id": Id});
         console.log(users);
         if(!users || users.length === 0) {
             return res.status(404).json({ message: "No users found" });

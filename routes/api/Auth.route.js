@@ -14,6 +14,6 @@ router.post("/contact", contactme);
 router.post("/google", google);
 router.get("/admin", admin)
 router.delete("/admindelete/:Id", admindelete)
-router.put("adminupdate/:Id", adminupdate)
+router.put("/adminupdate/:Id", adminupdate)
 
 module.exports = router;
