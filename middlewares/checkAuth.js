@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const User = require("../models/User"); // adjust the path as needed
+const User = require("../models/User.model"); // adjust the path as needed
 
 const secretKey = process.env.ACCESS_TOKEN_SECRET;
 

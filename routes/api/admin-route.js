@@ -1,4 +1,5 @@
 const express = require ("express");
+
 const getAllUsers = require("../../controllers/auth/admin-controller");
 
 const router = express.Router();
