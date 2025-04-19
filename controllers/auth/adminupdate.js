@@ -5,7 +5,7 @@ const getAllUsers = async(req, res, next) => {
         const { id } = req.params;
         console.log("values ye hain", id);
 
-        const users = await User.updateOne({"_id": id});
+        const users = await User.findOneAndUpdate({"_id": id});
         console.log(users);
         if(!users) {
             return res.status(404).json({ message: "No users found" });

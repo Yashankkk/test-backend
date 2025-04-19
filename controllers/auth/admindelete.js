@@ -5,7 +5,7 @@ const getAllUsers = async(req, res, next) => {
         const { Id } = req.params
         console.log("values ye hain", Id);
 
-        const users = await User.deleteOne({"_id": Id});
+        const users = await User.findOneAndDelete({"_id": Id});
         console.log(users);
         if(!users || users.length === 0) {
             return res.status(404).json({ message: "No users found" });
