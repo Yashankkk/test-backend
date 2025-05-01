@@ -29,18 +29,18 @@ const googleAuth = async (req, res, next) => {
         //         image: picture,
         //     });
         // }
-const userCheck = await Google.findOne({ email });
-console.log("userCheck",userCheck)
-if (userCheck) {
-    return res.status(404).json({
-        message: "User not found",
-    })}
-    const newUser =  new Google({
-        name,
-        email,
-    })
-    console.log("newUser",newUser)
-    await newUser.save()
+// const userCheck = await Google.findOne({ email });
+// console.log("userCheck",userCheck)
+// if (userCheck) {
+//     return res.status(404).json({
+//         message: "User not found",
+//     })}
+//     const newUser =  new Google({
+//         name,
+//         email,
+//     })
+//     console.log("newUser",newUser)
+//     await newUser.save()
         // const { _id } = user;
         // const token = jwt.sign({ _id, email },
         //     process.env.JWT_SECRET, {

@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const User = require("../models/User.model"); // adjust the path as needed
+const User = require("../models/User.model"); 
 
 const secretKey = process.env.ACCESS_TOKEN_SECRET;
 
@@ -12,13 +12,12 @@ const checkAuth = async (req, res, next) => {
 
         const decoded = jwt.verify(token, secretKey);
 
-        // Fetch the user from MongoDB using the ID from token
-        const user = await User.findById(decoded.userId); // assuming you store user ID in token
+        const user = await User.findById(decoded.userId); 
         if (!user) {
             return res.status(404).json({ message: "User not found!" });
         }
 
-        req.user = user; // attach user to request
+        req.user = user; 
         next();
     } catch (error) {
         console.error("JWT Verification Error:", error.message);
