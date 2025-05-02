@@ -12,7 +12,7 @@ const message = require("../../controllers/auth/message-controller");
 const messagedelete = require("../../controllers/auth/messagedelete");
 const messageupdate = require("../../controllers/auth/messageupdate");
 const otp = require("../../controllers/auth/otp-Controller");
-const rental = require("../../controllers/auth/rentals");
+const bookings = require("../../controllers/auth/bookings");
 
 router.post("/registration", register);
 router.post("/login", loginform);
@@ -34,6 +34,6 @@ router.put("/messageupdate/:Id", messageupdate);
 
 router.post("/otp", otp);
 
-router.post("/rentals", rental)
+router.post("/bookings", bookings)
 
 module.exports = router;

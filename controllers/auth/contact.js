@@ -21,7 +21,7 @@ const contact = async (req, res, next) => {
             return res.status(400).json({ error: "All fields are required" });
         }
         const contact = new Contact({ fullName, email, phone, message});
-        console.log("contach model",contact)
+        console.log("contact model",contact)
         await contact.save();
 
         res.status(201).json({ message: "Message sent successfully!" });
