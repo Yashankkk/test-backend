@@ -1,6 +1,6 @@
 const Booking = require("../../models/Bookings");
 
-const rental = async (req, res, next) => {
+const booking = async (req, res, next) => {
     try {
         const bookingvalues = await (req.body);
         console.log("values aa gu", bookingvalues);
@@ -13,12 +13,12 @@ const rental = async (req, res, next) => {
           pickupDate,
           returnDate,
           pricePerDay,
-          image
+          // image
         });
         console.log("booking data", booking);
         await booking.save();
 
-        res.status(201).json(saved);
+        res.status(201).json({message: "Booking created successfully!" });
 
       } catch (error) {
         console.error('Booking error:', error);
@@ -27,4 +27,4 @@ const rental = async (req, res, next) => {
       }
     };
 
-module.exports = rental;
+module.exports = booking;
