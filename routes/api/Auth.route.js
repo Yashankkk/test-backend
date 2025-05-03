@@ -24,7 +24,7 @@ router.get("/admin", admin);
 
 router.delete("/admindelete/:Id", admindelete);
 
-router.put("/adminupdate/:Id", adminupdate);
+router.put("/adminupdate/:id", adminupdate);
 
 router.get("/message",message);
 
