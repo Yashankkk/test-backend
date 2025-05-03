@@ -1,21 +1,28 @@
-const User = require("../../models/User.model")
+const User = require("../../models/User.model");
 
-const getAllContacts = async(req, res, next) => {
-    try {
-        const { id } = req.params;
-        console.log("values ye hain", id);
+const updateUserById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
 
-        const contacts = await User.updateOne({"_id": id});
-        console.log(contacts);
-        if(!contacts) {
-            return res.status(404).json({ message: "No users found" });
-        }
-        return res.status(200).json(contacts);
-    } catch(error){
-        console.error("error",error);
-        res.status(500).json ({ error: "Internal Server Error"});
-        next(error);
+    console.log("Updating user with ID:", id);
+    console.log("New data:", updateData);
+
+    const updatedUser = await User.findByIdAndUpdate(
+      id,
+      updateData,
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
     }
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.error("Error updating user:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 };
 
-module.exports = getAllContacts;
+module.exports = updateUserById;

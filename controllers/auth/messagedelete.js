@@ -5,7 +5,7 @@ const getAllContacts = async(req, res, next) => {
         const { Id } = req.params
         console.log("values ye hain", Id);
 
-        const contacts = await Contact.deleteOne({"_id": Id});
+        const contacts = await Contact.findOneAndDelete({"_id": Id});
         console.log(contacts);
         if(!contacts) {
             return res.status(404).json({ message: "No users found" });

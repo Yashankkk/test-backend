@@ -13,6 +13,9 @@ const messagedelete = require("../../controllers/auth/messagedelete");
 const messageupdate = require("../../controllers/auth/messageupdate");
 const otp = require("../../controllers/auth/otp-Controller");
 const bookings = require("../../controllers/auth/bookings");
+const book = require('../../controllers/auth/booking-controller');
+const bookingdelete = require('../../controllers/auth/bookingdelete');
+const bookingupdate = require('../../controllers/auth/bookingupdate');
 
 router.post("/registration", register);
 router.post("/login", loginform);
@@ -21,19 +24,19 @@ router.post("/google", google);
 
 router.get("/admin", admin);
 // router.route('/admin').get(checkAuth,admin);
-
 router.delete("/admindelete/:Id", admindelete);
-
 router.put("/adminupdate/:id", adminupdate);
 
 router.get("/message",message);
-
 router.delete("/messagedelete/:Id", messagedelete);
-
-router.put("/messageupdate/:Id", messageupdate);
+router.put("/messageupdate/:id", messageupdate);
 
 router.post("/otp", otp);
 
 router.post("/bookings", bookings)
+
+router.get("/booking", book);
+router.delete("/bookingdelete/:Id", bookingdelete);
+router.put("/bookingupdate/:id", bookingupdate);
 
 module.exports = router;
