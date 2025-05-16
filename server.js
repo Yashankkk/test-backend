@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const express = require("express");
 const backend = express();
- 
+ backend.use('/uploads', express.static('uploads'));
 backend.use(express.json())
 
 // CORS (Second step) 2
@@ -21,6 +21,7 @@ backend.use(cors({
 
 // routing (third step) 3
 backend.use(routes);
+
 
 
 // mongoose connect 1
