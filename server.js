@@ -5,6 +5,9 @@ const cors = require("cors");
 const routes = require("./routes");
 
 require("dotenv").config();
+backend.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 
 const express = require("express");
 const backend = express();
@@ -13,11 +16,11 @@ backend.use(express.json())
 
 // CORS (Second step) 2
 backend.use(cors({
-    origin: "*",
+    origin: ["https://renta-car-pink.vercel.app"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
-  })
-);
+}));
+
 
 // routing (third step) 3
 backend.use(routes);
