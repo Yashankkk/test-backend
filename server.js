@@ -5,9 +5,7 @@ const cors = require("cors");
 const routes = require("./routes");
 
 require("dotenv").config();
-backend.get("/", (req, res) => {
-  res.send("Backend is running!");
-});
+
 
 const express = require("express");
 const backend = express();
@@ -20,7 +18,9 @@ backend.use(cors({
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
 }));
-
+backend.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 
 // routing (third step) 3
 backend.use(routes);
