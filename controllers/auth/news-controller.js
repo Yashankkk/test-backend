@@ -1,16 +1,17 @@
 const axios = require('axios');
 
-const API_KEY = 'api_live_ueZ3kbq9YJHcziLyALsAEEIUU4ywc0jp0gg65yJR69XaHOond';
+const API_KEY = 'pub_801f89928a744473a9298568db0f3487';
 
 const getCarNews = async (req, res) => {
   try {
-    const response = await axios.get(`https://api.apitube.io/v1/news/everything?category=automotive&api_key=YOUR_API_KEY&industry.id=industry.automotive_news`, {
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-      },
+    const response = await axios.get('https://newsdata.io/api/1/latest', {
       params: {
-        "category": "automotive",
-      }
+        apikey: API_KEY,
+        q: 'cars',
+        country: 'in',
+        language: 'en,hi,pa',
+        category: 'technology,domestic,environment,world',
+      },
     });
 
     res.status(200).json(response.data);
