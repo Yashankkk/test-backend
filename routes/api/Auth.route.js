@@ -16,6 +16,7 @@ const bookings = require("../../controllers/auth/bookings");
 const book = require('../../controllers/auth/booking-controller');
 const bookingdelete = require('../../controllers/auth/bookingdelete');
 const bookingupdate = require('../../controllers/auth/bookingupdate');
+const CarNews = require('../../controllers/auth/news-controller');
 
 router.post("/registration", register);
 router.post("/login", loginform);
@@ -38,5 +39,7 @@ router.post("/bookings", bookings)
 router.get("/booking", book);
 router.delete("/bookingdelete/:Id", bookingdelete);
 router.put("/bookingupdate/:id", bookingupdate);
+
+router.get("/news", CarNews);
 
 module.exports = router;

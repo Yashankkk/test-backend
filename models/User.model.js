@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Define the User schema
 const userSchema = new mongoose.Schema({
     fullName: { type: String, required: true, trim: true},
     username: { type: String, required: true, unique: true, trim: true,},
@@ -11,5 +10,5 @@ const userSchema = new mongoose.Schema({
     isVerified: { type: Boolean, default: false,},
 }, { timestamps: true });
 
-// Export the User model
+
 module.exports = mongoose.model('User', userSchema);

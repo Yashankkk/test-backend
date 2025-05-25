@@ -10,7 +10,7 @@ const reviewSchema = new mongoose.Schema({
     required: true,
   },
   image: {
-    type: String, // Store filename only
+    type: String, 
     default: null,
   },
   createdAt: {

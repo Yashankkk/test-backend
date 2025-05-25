@@ -1,4 +1,3 @@
-// models/Report.model.js
 const mongoose = require('mongoose');
 
 const ReportSchema = new mongoose.Schema({
@@ -7,7 +6,7 @@ const ReportSchema = new mongoose.Schema({
   description: { type: String, required: true },
   bookingId: { type: String },
   issueDate: { type: Date },
-  files: [{ type: String }], // store file paths or URLs
+  files: [{ type: String }],
 }, { timestamps: true });
 
 module.exports = mongoose.model('Report', ReportSchema);

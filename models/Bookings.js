@@ -7,7 +7,6 @@ const bookingSchema = new mongoose.Schema({
   pickupDate: { type: String, required: true },
   returnDate: { type: String, required: true },
   pricePerDay: { type: Number, required: true },
-  // image: { type: String },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Booking', bookingSchema);

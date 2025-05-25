@@ -14,7 +14,7 @@ backend.use(express.json())
 
 // CORS (Second step) 2
 backend.use(cors({
-    origin: ["https://renta-car-pink.vercel.app"],
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
 }));
