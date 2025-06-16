@@ -12,7 +12,7 @@ const message = require("../../controllers/auth/message-controller");
 const messagedelete = require("../../controllers/auth/messagedelete");
 const messageupdate = require("../../controllers/auth/messageupdate");
 const otp = require("../../controllers/auth/otp-Controller");
-const bookings = require("../../controllers/auth/bookings");
+const createBooking = require("../../controllers/auth/bookings");
 const book = require('../../controllers/auth/booking-controller');
 const bookingdelete = require('../../controllers/auth/bookingdelete');
 const bookingupdate = require('../../controllers/auth/bookingupdate');
@@ -35,7 +35,7 @@ router.put("/messageupdate/:id", messageupdate);
 
 router.post("/otp", otp);
 
-router.post("/bookings", bookings)
+router.post("/bookings", createBooking);
 
 router.get("/booking", book);
 router.delete("/bookingdelete/:Id", bookingdelete);
